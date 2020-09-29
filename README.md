@@ -8,7 +8,9 @@ A script to pull cost rule data from Conformity
 
 If left blank, the script will pull results for all your accounts. You can also list multiple specifc accounts.
 eg:
+
 `$ ./CostRuleData`
+
 `$ ./CostRuleData acbds2347,sdlccn287`
   
 You will be asked to enter the AWS region your Conformity instance is hosted in, eg:

@@ -8,7 +8,7 @@ Make sure jq is installed on your linux/mac terminal https://stedolan.github.io/
 
 This script calls the Trend Micro Cloud One Conformity API: https://github.com/cloudconformity/documentation-api 
 
-Run the script from the terminal.
+Run the script from the terminal. You can enter Conformity account ids as arguments to only scan those accounts.
 
 `$ ./CostRuleData <accountIDArgument>`
 

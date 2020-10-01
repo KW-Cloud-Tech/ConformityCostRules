@@ -35,4 +35,4 @@ TIMESTAMP=`date +%Y-%m-%d_%H.%M.%S`
 		"https://$region-api.cloudconformity.com/v1/checks?accountIds=$accountid&page[size]=1000&filter[statuses]=FAILURE&filter[categories]=cost-optimisation" \
 		-H "Content-Type: application/vnd.api+json" \
 		-H "Authorization: ApiKey $apikey" \
-		| jq -r '.data[] | select (.attributes.cost > 0 or .attributes.waste > 0) | {"account": .relationships.account.data.id, "resource": .attributes.resource, "rule": .relationships.rule.data.id, "cost": .attributes.cost, "waste": .attributes.waste } | keys_unsorted, map(.) | @csv' | awk 'NR==1 || NR%2==0'  >> CostRules_$TIMESTAMP.csv
+		| jq -r '.data[] | select (.attributes.cost > 0 or .attributes.waste > 0) | {"account": .relationships.account.data.id, "resource": .attributes.resource, "rule": .relationships.rule.data.id, "message": .attributes.message, "cost": .attributes.cost, "waste": .attributes.waste } | keys_unsorted, map(.) | @csv' | awk 'NR==1 || NR%2==0'  >> CostRules_$TIMESTAMP.csv

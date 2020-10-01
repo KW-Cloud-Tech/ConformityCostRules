@@ -23,11 +23,14 @@ else #run against only specified accountids in argument
 fi
 
 # print a list of accounts and their AWS account numbers
-curl -L -X GET \
+if [ -f "AWS_AccountMapping.csv" ]
+then
+   curl -L -X GET \
         "https://$region-api.cloudconformity.com/v1/accounts" \
         -H "Content-Type: application/vnd.api+json" \
         -H "Authorization: ApiKey $apikey" \
 	| jq -r '.data[] | {"Conformity-ID" : .id, "AWSAccount" : .attributes | .["awsaccount-id"]} | keys_unsorted, map(.) | @csv' | awk 'NR==1 || NR%2==0'  >> AWS_AccountMapping.csv
+fi
 
 # run the csv script based on selection and for each account
 TIMESTAMP=`date +%Y-%m-%d_%H.%M.%S`

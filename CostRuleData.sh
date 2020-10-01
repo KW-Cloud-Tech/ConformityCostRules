@@ -22,6 +22,13 @@ else #run against only specified accountids in argument
 	echo "Generating cost report for account $1"
 fi
 
+# print a list of accounts and their AWS account numbers
+curl -L -X GET \
+        "https://$region-api.cloudconformity.com/v1/accounts" \
+        -H "Content-Type: application/vnd.api+json" \
+        -H "Authorization: ApiKey $apikey" \
+	| jq -r '.data[] | {"Conformity-ID" : .id, "AWSAccount" : .attributes | .["awsaccount-id"]} | keys_unsorted, map(.) | @csv' | awk 'NR==1 || NR%2==0'  >> AWS_AccountMapping.csv
+
 # run the csv script based on selection and for each account
 TIMESTAMP=`date +%Y-%m-%d_%H.%M.%S`
 	curl -L -X GET \

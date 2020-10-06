@@ -4,7 +4,7 @@ A script to pull cost rule data from Conformity
 
 ## Solution Design
 
-![SolutionDesign](costRuleSolution.jpg)
+![SolutionDesign](Cost_Optimisation.jpg)
 
 ## Usage
 

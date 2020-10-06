@@ -2,6 +2,10 @@
 
 A script to pull cost rule data from Conformity
 
+## Solution Design
+
+![SolutionDesign](costRuleSolution.jpg)
+
 ## Usage
 
 Make sure jq is installed on your linux/mac terminal https://stedolan.github.io/jq/

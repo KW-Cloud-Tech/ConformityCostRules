@@ -31,7 +31,7 @@ You also enter the API key for your Conformity user.
 The output is a csv file.
 
 ### Credit
-Tom Ryan helped test and edit v1 /n
+Tom Ryan helped test and edit v1  
 Deepika Raipuria for solution design image
 
 ### Support

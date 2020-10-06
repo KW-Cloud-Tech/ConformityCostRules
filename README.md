@@ -31,8 +31,8 @@ You also enter the API key for your Conformity user.
 The output is a csv file.
 
 ### Credit
-Tom Ryan helped test and edit v1  
-Deepika Raipuria for solution design image
+Tom Ryan - tested and edited v1  
+Deepika Raipuria - solution design image
 
 ### Support
 This script is not formally supported by Trend Micro
